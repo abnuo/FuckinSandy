@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: compile
-      run: for f in *.c; name=$(echo "$f" | cut -f 1 -d '.'); do gcc $f -o $name; done
+      run: for f in *.c; y=${x%.bar}; x=${y##*/}; do gcc $f -o $x; done
     - name: zip
       run: zip -r foo.zip .
     - name: upload
