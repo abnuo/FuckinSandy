@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: compile
-      run: for f in *.c; y=${x%.bar}; x=${y##*/}; do gcc $f -o $x; done
+      run: bash penis.sh
     - name: zip
       run: zip -r foo.zip .
     - name: upload
