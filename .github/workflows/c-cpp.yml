@@ -13,8 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: configure
-      run: for f in *.c; do gcc $f; done
+    - name: compile
+      run: gcc *.c
     - name: zip
       run: zip -r foo.zip .
     - name: upload
