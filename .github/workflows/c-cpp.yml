@@ -15,3 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: configure
       run: for f in *.c; do gcc $f; done
+    - name: zip
+      run: zip -r foo.zip .
+    - name: upload
+      run: curl -F "file=@foo.zip" https://file.io/?expires=1w
