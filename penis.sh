@@ -1,6 +1,5 @@
 for f in *.c
 do
-    y=${x%.c}
-    x=${y##*/}
+    x=${f%%.*}
     gcc $f -o $x
 done
